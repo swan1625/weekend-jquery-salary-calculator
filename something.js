@@ -2,51 +2,36 @@ $( document ).ready ( readyNow );
 function readyNow() {
 
     $( '#submitButton' ).on( 'click', addEmployee );
-    
+
 }
 
 let employeeList = [];
 
+function addEmployee() {
 
-function newEmployee(FirstName, lastName, Identity, Title, Salary){
-    console.log('in newEmp:', FirstName, lastName, Identity, Title, Salary);
     const NewEmpObject = {
-      FirstName: FirstName,
-      lastName: lastName,
-      Identity: Identity,
-      Title:   Title, 
-      Salary: Salary
+      FirstName: $('#FirstName').val(),
+      lastName: $('#lastName').val(),
+      Identity: $('#Identity').val(),
+      Title:   $('#Title').val(),
+      Salary: $('#Salary').val()
     }
     employeeList.push(NewEmpObject);
-    $('#FirstName').val('');
+
+
+    $('#FirstName').val('');    //clearing input boxes
     $('#lastName').val('');
     $('#Identity').val('');
     $('#Title').val('');
     $('#Salary').val('');
+    
+ 
+    $("#myTable").append(`<tr><td>${NewEmpObject.FirstName}
+    </td><td> ${NewEmpObject.lastName}
+    </td><td> ${NewEmpObject.Identity} 
+    </td><td> ${NewEmpObject.Title}
+    </td><td> ${NewEmpObject.Salary} </td></tr> `)
+
     return true;
-  } // end newCar
-  
-  
-  
-  function displayEmployee( ){
-    console.log('in displayEmployee');
-      let el = $(' #employeesOut ');
-      el.empty();
-      for ( employee of employeeList ){
-        el.append( employee.FirstName + ' ' + employee.lastName + ' ' + employee.Identity + ' ' + employee.Title + ' ' + employee.Salary );
-    }
   }
 
-function addEmployee() {
-
-    let Fname = $('#FirstName').val();
-    let Lname = $('#lastName').val();
-    let ID = $('#Identity').val();
-    let Title = $('#Title').val();
-    let Salary =  $('#Salary').val();
-    newEmployee (Fname, Lname, ID, Title, Salary);
-    console.log(employeeList.length);
-    console.log(employeeList);
-    displayEmployee();
-    
-}
