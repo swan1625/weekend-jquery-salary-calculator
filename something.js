@@ -64,7 +64,11 @@ function addEmployee() {
       $('#span').empty(); 
         $('#span').append(monthlycost.toFixed(2)); 
 
-      
+      if (monthlycost > 20000) {
+        $("#tableFoot span").css({
+          'background-color': '#CD5C5C',
+        })
+      }
   }
 
   
