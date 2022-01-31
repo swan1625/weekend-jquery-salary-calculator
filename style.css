@@ -1,28 +1,25 @@
 header {
     text-align: center;
     font-size: xx-large;
-    background-color: aquamarine;
+    background-color: rgb(218, 223, 157);
    
 }
+ 
 
 .inputFields{
 
 padding-top: 20px;
+
 }
 
 body {
     background-color: rgb(216, 164, 182)
 }
 
+
+
 th, td {
     border: 1px solid black;
-    
-    background-color: whitesmoke;
-
-} 
-
-.tableFoot {
-    border: none;
     
     background-color: whitesmoke;
 

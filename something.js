@@ -21,8 +21,7 @@ function readyNow() {
 
 
 
-function excludeRow(){
-
+function excludeRow(){                   //delete button function, targets parents of the row of the delete button clicked
     console.log('this is', $(this));
     $(this).parents("tr").remove();
 
@@ -42,11 +41,11 @@ function addEmployee() {
 
 
     //apending new employee to table
-    $("#myTable").append(`<tr><td>${NewEmpObject.FirstName}             
+    $("#myTable").append(`<tr class="contents"><td>${NewEmpObject.FirstName}             
     </td><td> ${NewEmpObject.lastName}
     </td><td> ${NewEmpObject.Identity} 
     </td><td> ${NewEmpObject.Title}
-    </td><td> ${NewEmpObject.Salary} 
+    </td><td> $ ${NewEmpObject.Salary} 
     </td><td>  <button id="deleteButton"> Delete Row </button>
     </td></tr> `)
 
@@ -57,15 +56,14 @@ function addEmployee() {
     $('#Salary').val('');
 
     total += NewEmpObject.Salary;        // targeting just the salary information into 
-    calc(total);   /// do i need this? 
+    calc(total); 
     console.log(employeeList);
-    // return true;   /// do i need thus? 
   }
 
   function calc(total) {                                // calculating  monthly total and adding to DOM
       let monthlycost = ( total / 12 );
       $('#span').empty(); 
-        $('#span').append(monthlycost.toFixed(2)); 
+      $('#span').append(monthlycost.toFixed(2));    
 
       if (monthlycost > 20000) {                     // monthly cost to turn red above 20k 
         $("#tableFoot span").css({
