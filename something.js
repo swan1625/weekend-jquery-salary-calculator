@@ -13,20 +13,24 @@ let total = 0; // store Monthly Total
 
 function readyNow() {
 
-    $( '#submitButton' ).on( 'click', addEmployee );
-    $( '#myTable' ).on('click', '#deleteButton',  excludeRow);
-}
+    $( '#submitButton' ).on( 'click', addEmployee );                      // listener for submit button
+    $( '#myTable' ).on('click', '#deleteButton',  excludeRow);           // listener for delete button
+
+
+  } 
+
+
 
 function excludeRow(){
 
     console.log('this is', $(this));
-    $(this).remove();
+    $(this).parents("tr").remove();
 
   }
 
 function addEmployee() {
 
-    const NewEmpObject = {                       // creating a 
+    const NewEmpObject = {                       // creating a new employee information in an object
       FirstName: $('#FirstName').val(),
       lastName: $('#lastName').val(),
       Identity: $('#Identity').val(),
@@ -37,14 +41,13 @@ function addEmployee() {
     employeeList.push(NewEmpObject);   //pushing new employee to array 
 
 
-    
- 
-    $("#myTable").append(`<tr><td>${NewEmpObject.FirstName}
+    //apending new employee to table
+    $("#myTable").append(`<tr><td>${NewEmpObject.FirstName}             
     </td><td> ${NewEmpObject.lastName}
     </td><td> ${NewEmpObject.Identity} 
     </td><td> ${NewEmpObject.Title}
     </td><td> ${NewEmpObject.Salary} 
-    </td><td>  <button id="deleteButton"> Delete </button>
+    </td><td>  <button id="deleteButton"> Delete Row </button>
     </td></tr> `)
 
     $('#FirstName').val('');    //clearing input boxes
@@ -53,22 +56,22 @@ function addEmployee() {
     $('#Title').val('');
     $('#Salary').val('');
 
-    total += NewEmpObject.Salary;  // 
+    total += NewEmpObject.Salary;        // targeting just the salary information into 
     calc(total);   /// do i need this? 
     console.log(employeeList);
-    return true;   /// do i need thus? 
+    // return true;   /// do i need thus? 
   }
 
-  function calc(total) {
+  function calc(total) {                                // calculating  monthly total and adding to DOM
       let monthlycost = ( total / 12 );
       $('#span').empty(); 
         $('#span').append(monthlycost.toFixed(2)); 
 
-      if (monthlycost > 20000) {
+      if (monthlycost > 20000) {                     // monthly cost to turn red above 20k 
         $("#tableFoot span").css({
           'background-color': '#CD5C5C',
         })
       }
-  }
+  }                                             // end calc function
 
   

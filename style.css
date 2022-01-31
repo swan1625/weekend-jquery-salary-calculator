@@ -2,27 +2,53 @@ header {
     text-align: center;
     font-size: xx-large;
     background-color: aquamarine;
+   
 }
 
+.inputFields{
 
-table, th {
+padding-top: 20px;
+}
+
+body {
+    background-color: rgb(216, 164, 182)
+}
+
+th, td {
     border: 1px solid black;
+    
+    background-color: whitesmoke;
 
+} 
+
+.tableFoot {
+    border: none;
+    
+    background-color: whitesmoke;
+
+}
+
+table {
+    background-color: whitesmoke;
+    width: 780px;
+    border-collapse: collapse;
+}
+
+.buttonDiv {
+    padding-top: 10px;
+    width: 780px;
+    overflow: hidden;
+    clear: both;
+   
   }
 
-/* h3 {
-
-    display: flex;
-    justify-content: right;
-} */
-
 .buttonStyle{
-
+    float: right;
     background: paleturquoise;
 }
 
+.styleTitle {
 
-.TableTest{
-
-    color:rebeccapurple;
+    font-weight: bold;
+    font-size: x-large;
 }
