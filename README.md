@@ -13,13 +13,6 @@ This project takes information in through multiple input fields, appends them to
 $20,000, the user is alerted by a red box over the total cost. 
 
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-![My Calculator](MyCalculator.png)
-
-
 ## Usage
 How does someone use this application? 
 
